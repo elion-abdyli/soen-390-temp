@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps API Example</title>
+    <style>
+        /* Set the size of the map container */
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Maps with API Key</h1>
+    <div id="map"></div>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // Location for the map (New York City)
+            const location = { lat: 40.7128, lng: -74.0060 };
+
+            // Create the map, centered on the location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: location,
+            });
+
+            // Add a marker at the location
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: "New York City",
+            });
+        }
+    </script>
+
+    <!-- Add your API key here (replace YOUR_API_KEY with the actual key) -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
